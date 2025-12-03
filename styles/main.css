@@ -1,173 +1,305 @@
-/* ===== БАЗОВЫЕ СТИЛИ ===== */
+/* Общие сбросы стилей */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
     color: #333;
-    background-color: #f5f5f5;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-/* ===== ХЕДЕР ===== */
-.header {
-    background-color: #2c3e50;
-    padding: 1rem 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+/* Шторка на главной странице */
+.curtain {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+    padding: 60px 20px 100px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
-.navigation {
+.curtain-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
-}
-
-.nav-list {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
-
-.nav-list a {
-    color: #ecf0f1;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 1.1rem;
-    padding: 0.5rem 0;
     position: relative;
-    transition: color 0.3s ease;
+    z-index: 2;
 }
 
-.nav-list a:hover {
-    color: #3498db;
+.curtain h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.nav-list a::after {
-    content: '';
+.curtain p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    opacity: 0.9;
+}
+
+.curtain-bottom {
     position: absolute;
     bottom: 0;
     left: 0;
-    right: 0;
-    height: 2px;
-    background-color: #3498db;
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
+    width: 100%;
+    height: 40px;
+    background-color: #f8f9fa;
+    border-radius: 30px 30px 0 0;
 }
 
-.nav-list a:hover::after {
-    transform: scaleX(1);
-}
-
-/* ===== ОСНОВНОЙ КОНТЕНТ ===== */
-.main-content {
-    margin-top: 80px; /* Чтобы контент не скрывался под фиксированным хедером */
-    min-height: calc(100vh - 80px);
-    padding: 2rem;
-}
-
-/* ===== ВСТУПИТЕЛЬНАЯ СЕКЦИЯ ===== */
-#intro {
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 4rem 2rem;
-    background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
-    border-radius: 15px;
+/* Кнопка перехода между страницами */
+.page-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.2);
     color: white;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-#intro h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+.page-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-#intro::after {
-    content: "Изучаем основы создания сайтов";
-    display: block;
-    font-size: 1.2rem;
-    opacity: 0.9;
-    margin-top: 1rem;
-}
-
-/* ===== ДОПОЛНИТЕЛЬНЫЕ СЕКЦИИ ===== */
-#history, #technologies {
+/* Основной контент */
+.content {
     max-width: 1200px;
-    margin: 3rem auto;
-    padding: 3rem;
+    margin: -40px auto 40px;
+    padding: 0 20px;
+    flex: 1;
+}
+
+h2 {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+    color: #7f8c8d;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+/* Сетка изображений */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.image-item {
     background: white;
     border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-#history h2, #technologies h2 {
+.image-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.image-container {
+    height: 200px;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.image-item:hover .image-container img {
+    transform: scale(1.05);
+}
+
+.image-text {
+    padding: 20px;
+}
+
+.image-text h3 {
+    font-size: 1.3rem;
     color: #2c3e50;
-    margin-bottom: 2rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid #3498db;
-    display: inline-block;
+    margin-bottom: 10px;
 }
 
-/* ===== АДАПТИВНОСТЬ ===== */
+.image-text p {
+    color: #7f8c8d;
+    font-size: 0.95rem;
+}
+
+/* Дополнительный текст */
+.additional-text {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 40px;
+}
+
+.additional-text p {
+    margin-bottom: 15px;
+}
+
+/* Контейнер для исходного кода */
+.code-container {
+    background: #2d2d2d;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1e1e1e;
+    padding: 15px 20px;
+    border-bottom: 1px solid #3d3d3d;
+}
+
+.code-header h3 {
+    color: #f8f8f8;
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.copy-button {
+    background: #3d3d3d;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background 0.3s ease;
+}
+
+.copy-button:hover {
+    background: #4d4d4d;
+}
+
+pre {
+    margin: 0;
+    padding: 20px;
+    overflow-x: auto;
+}
+
+code {
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.html-code {
+    color: #f8f8f8;
+}
+
+.css-code {
+    color: #f8f8f8;
+}
+
+/* Описание кода */
+.code-description {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 40px;
+}
+
+.code-description h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.code-description p {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+/* Подвал */
+footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+}
+
+/* Адаптивность */
 @media (max-width: 768px) {
-    .nav-list {
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
+    .curtain h1 {
+        font-size: 2.5rem;
     }
     
-    .header {
-        position: static;
+    .curtain p {
+        font-size: 1rem;
     }
     
-    .main-content {
+    .page-button {
+        position: relative;
+        top: 0;
+        right: 0;
+        display: inline-block;
         margin-top: 20px;
-        padding: 1rem;
     }
     
-    #intro h1 {
+    .image-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .curtain {
+        padding: 40px 15px 80px;
+    }
+    
+    .curtain h1 {
         font-size: 2rem;
     }
     
-    #history, #technologies {
-        padding: 2rem 1rem;
-        margin: 2rem 1rem;
+    .image-grid {
+        grid-template-columns: 1fr;
     }
-}
-
-/* ===== ПРОСТЫЕ АНИМАЦИИ ===== */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
+    
+    .content {
+        padding: 0 15px;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-#intro {
-    animation: fadeIn 0.8s ease-out;
-}
-
-#history {
-    animation: fadeIn 0.8s ease-out 0.2s both;
-}
-
-#technologies {
-    animation: fadeIn 0.8s ease-out 0.4s both;
 }
