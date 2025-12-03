@@ -21,7 +21,7 @@ body {
 .curtain {
     background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
     color: white;
-    padding: 60px 20px 100px;
+    padding: 30px 20px 100px;
     text-align: center;
     position: relative;
     overflow: hidden;
