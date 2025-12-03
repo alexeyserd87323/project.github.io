@@ -3,23 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Сайт о веб-разработке">
-    <title>Веб-проект</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header class="header">
-        <nav class="navigation" aria-label="Основная навигация">
-            <ul class="nav-list">
-                <li><a href="#history">История</a></li>
-                <li><a href="#technologies">Технологии</a></li>
-            </ul>
-        </nav>
+    <!-- Шторка с названием -->
+    <header class="curtain">
+        <div class="curtain-content">
+            <h1>Мой сайт</h1>
+            <p>Простой и элегантный дизайн с двустраничной навигацией</p>
+            
+            <!-- Кнопка перехода на вторую страницу -->
+            <a href="second-page.html" class="page-button">
+                <i class="fas fa-arrow-right"></i> Вторая страница
+            </a>
+        </div>
+        
+        <!-- Декоративный элемент -->
+        <div class="curtain-bottom"></div>
     </header>
-    <main class="main-content">
-        <section id="intro">
-            <h1>Добро пожаловать в мир веб-разработки</h1>
-        </section>
+
+    <!-- Основной контент -->
+    <main class="content">
+        <h2>Моя коллекция изображений</h2>
+        <p class="subtitle">Здесь представлены пять изображений с описаниями</p>
+        
+        <!-- Контейнер для картинок -->
+        <div class="image-grid">
+            <!-- Картинка 1 -->
+            <div class="image-item">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Горный пейзаж">
+                </div>
+                <div class="image-text">
+                    <h3>Горный пейзаж</h3>
+                    <p>Красивые горы с заснеженными вершинами и зелеными долинами.</p>
+                </div>
+            </div>
+            
+            <!-- Картинка 2 -->
+            <div class="image-item">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba" alt="Океан и скалы">
+                </div>
+                <div class="image-text">
+                    <h3>Океан и скалы</h3>
+                    <p>Волны разбиваются о скалистый берег в солнечный день.</p>
+                </div>
+            </div>
+            
+            <!-- Картинка 3 -->
+            <div class="image-item">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e" alt="Лесной путь">
+                </div>
+                <div class="image-text">
+                    <h3>Лесной путь</h3>
+                    <p>Тропинка, ведущая через густой зеленый лес.</p>
+                </div>
+            </div>
+            
+            <!-- Картинка 4 -->
+            <div class="image-item">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b" alt="Осенний лес">
+                </div>
+                <div class="image-text">
+                    <h3>Осенний лес</h3>
+                    <p>Деревья с золотыми и красными листьями в осеннем лесу.</p>
+                </div>
+            </div>
+            
+            <!-- Картинка 5 -->
+            <div class="image-item">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1475924156734-496f6cac6ec1" alt="Пляж на закате">
+                </div>
+                <div class="image-text">
+                    <h3>Пляж на закате</h3>
+                    <p>Красивый закат над океаном с пальмами на берегу.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Дополнительный текст -->
+        <div class="additional-text">
+            <p>Этот сайт демонстрирует простую, но элегантную структуру с двустраничной навигацией. Все элементы реализованы с помощью чистого HTML и CSS.</p>
+            <p>Нажмите кнопку в верхнем правом углу, чтобы перейти на вторую страницу с исходным HTML кодом.</p>
+        </div>
     </main>
+
+    <!-- Подвал -->
+    <footer>
+        <p>Простой двустраничный сайт &copy; 2023</p>
+    </footer>
 </body>
 </html>
